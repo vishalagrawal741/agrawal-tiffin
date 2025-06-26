@@ -1,123 +1,228 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: #fdf5e6;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background-image: url("Images/ForPC.png"); /* Default for PC */
-      background-size: cover;
-      background-position: center;
-      padding: 100px 20px;
-      color: white;
-      text-align: left;
-      position: relative;
-    }
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    @media (max-width: 768px) {
-      header {
-        background-image: url("Images/ForMobile.png"); /* Show on mobile */
-      }
-    }
+body {
+  background-color: #fdf5e6; /* Light Cream */
+  color: #333;
+  line-height: 1.6;
+}
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-    header h1, header .btn {
-      position: relative;
-      z-index: 1;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      max-width: 500px;
-    }
-    .btn {
-      background: #27ae60;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #d35400;
-      margin-bottom: 20px;
-    }
-    .tiffin-box, .plan-box, .location-box {
-      background: #fff8ec;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .plans {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .plan-box {
-      flex: 1 1 200px;
-      text-align: center;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .contact-info a {
-      color: #27ae60;
-      text-decoration: none;
-    }
-    .menu-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .menu-table th, .menu-table td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
-    .menu-table th {
-      background-color: #f4e2d8;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-    }
+/* Header */
+header {
+  background-image: url("Images/ForPC.png"); /* PC Background */
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: white;
+  text-align: left;
+  position: relative;
+}
 
-    /* Mobile Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      .plans {
-        flex-direction: column;
-      }
-      section {
-        padding: 20px 10px;
-      }
-    }
+@media (max-width: 768px) {
+  header {
+    background-image: url("Images/ForMobile.png"); /* Mobile Background */
+  }
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+header h1, header .btn {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  max-width: 500px;
+}
+
+.btn {
+  background: #27ae60;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #219150;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fff8ec;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #d35400;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Icons Row */
+.flex-icons {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+
+/* Cards and Boxes */
+.tiffin-box,
+.plan-box,
+.location-box,
+.google-review-box {
+  background: #fff8ec;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Plans Section */
+.plans {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.plan-box {
+  flex: 1 1 200px;
+  text-align: center;
+  background: #f9e79f;
+  border: 1px solid #f4d03f;
+}
+
+/* Contact Info */
+.contact-info a {
+  color: #27ae60;
+  text-decoration: none;
+}
+/* Toggle Button */
+.toggle-menu-btn {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-menu-btn:hover {
+  background-color: #e35b50;
+}
+
+/* Slide-down wrapper */
+.menu-slide {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+/* Active (expanded) */
+.menu-slide.open {
+  max-height: 1000px;
+  padding-top: 20px;
+}
+
+/* Table Styling */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.menu-table th, .menu-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-table th {
+  background-color: #ff6f61;
+  color: white;
+  font-weight: 600;
+}
+
+.menu-table tr:hover {
+  background-color: #fff3e0;
+  transition: background 0.3s ease;
+}
+
+
+
+
+
+/* Google Reviews Widget */
+.google-review-box {
+  background: #fff8ec;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+/* Map iframe */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .plans {
+    flex-direction: column;
+  }
+  section {
+    padding: 20px 10px;
+  }
+}
